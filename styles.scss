@@ -1,0 +1,50 @@
+.content{
+	max-width: 1200px;
+	margin: 0 auto;
+	.header{
+		padding: 20px;
+		text-align: center;
+		border-radius: 15px;
+   		//background: radial-gradient(#F8FFF3 , #85D8CE, #09A7FF, #FFFFFF 70%);
+	}
+	.city-select{
+		width: auto;
+		display: inline;
+		cursor: pointer;
+	}
+	.city-info{
+		margin-top: 15px;
+		.city-name{
+			font-weight: bold;
+			font-size: 23px;
+		}
+	}
+	.forecast-day{
+		border: 1px solid #337ab7;
+		border-radius: 7px;
+		margin-bottom: 20px;
+		.day-header{
+			padding: 15px;
+			background: #337ab7;
+			color: white;
+			border-radius: 7px 7px 0 0;	
+		}
+		.day-footer{
+			padding: 15px;
+			border-top: 1px solid gray;
+			background: #F2F2F2;
+			border-radius: 0 0 7px 7px;			
+		}
+		.day-content{
+			padding: 15px;
+			.day-pic{
+				width: 80px;
+			}
+			.main-props{
+				display: inline-block;
+				font-size: 22px;
+				font-weight: bold;
+			}
+		}
+	}
+}

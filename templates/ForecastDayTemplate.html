@@ -1,0 +1,25 @@
+<div>
+	<div class="day-header">
+	  <span class="label label-info" ng-show="$first">TODAY</span>
+	  <span class="weather-prop">{{currentWeather.dt * 1000 | date:'fullDate'}}</span>
+	</div>
+	<div class="day-content">
+	  <img class="day-pic" ng-src="http://openweathermap.org/img/w/{{currentWeather.weather[0].icon}}.png" alt="weather">
+	  <div class="main-props">
+	    <span class="weather-prop">{{currentWeather.weather[0].main}}</span>
+	    <span class="weather-prop">{{currentWeather.temp.day | number:1}} °С</span>  
+	  </div>
+	  <div class="additional-props">
+	    <span class="weather-prop">{{currentWeather.weather[0].description}},</span>  
+	    <span class="weather-prop">Day: {{currentWeather.temp.day}}°С,</span>
+	    <span class="weather-prop">Night: {{currentWeather.temp.night}}°С</span>
+	  </div>
+	</div>
+	<div class="day-footer">
+	  <span class="weather-prop">Min: {{currentWeather.temp.min}}°С,</span>
+	  <span class="weather-prop">Max {{currentWeather.temp.max}}°С,</span>  
+	  <span class="weather-prop">Humidity: {{currentWeather.humidity}} %,</span>
+	  <span class="weather-prop">Pressure: {{currentWeather.pressure}} hPa,</span>
+	  <span class="weather-prop">Wind: {{currentWeather.speed}} m/s</span>
+	</div>
+</div>

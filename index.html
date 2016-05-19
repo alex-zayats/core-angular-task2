@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather app</title>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/service.js"></script>
+  <script src="js/directive.js"></script>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<body ng-app="weatherApp" ng-controller="weatherCtrl">
+<div class="content">
+  <div class="jumbotron header">
+    <h1>Core angular training</h1>
+    <h3>Weather app</h3>
+  </div>
+  <select class="city-select form-control" id="city-select" ng-model="currentCity" ng-init="cityChanged()" ng-change="cityChanged()" ng-options="city as city for city in cities"></select>
+  <button class="btn btn-success" type="button" ng-click="addCityPopup()">Add city</button>
+
+  <p class="city-info">  
+    <span class="city-name">Name: {{currentWeather.city.name}}</span>
+    <span class="coordinates small">Coordinates: Lon {{currentWeather.city.coord.lat}}, Lat {{currentWeather.city.coord.lon}}</span>
+  </p>
+
+  <div class="forecast-day" ng-repeat="day in currentWeather.list">
+    <forecast-day current-weather="day"></forecast-day>
+  </div>
+
+</div>
+</body>
+</html>
